@@ -1,0 +1,13 @@
+{
+  "name": "sadb",
+  "version": "0.0.1",
+  "description": "Test Discord Bot",
+  "main": "bot.js",
+  "author": "Threebow",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "mysql": "^2.15.0",
+    "snekfetch": "^3.2.9"
+  }
+}
