@@ -125,6 +125,11 @@ bot.on("message", async message => {
 	if(cmd) cmd.run(bot, message, args, con);
 });
 
+var fortunes = [
+	"Yes",
+	"No",
+	"Maybe"
+
 bot.on("message", function(message){
 	if (message.author.equals(bot.user)) return;
 	if (!message.content.startsWith(prefix)) return;
