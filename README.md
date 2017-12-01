@@ -1,4 +1,4 @@
-# super-awesome-discord-bot
-Discord Bot made for a YouTube discord.js tutorial series.
+#discordbot
+Discord Bot made by Dimitris-GR
 
-YouTube Playlist: https://www.youtube.com/playlist?list=PLVBD9pLCy6oogSgJuUQzE-99_-voOdSng
+do npm --instal --save discord.js on your folder to get node_modules!
