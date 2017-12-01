@@ -125,20 +125,18 @@ bot.on("message", async message => {
 	if(cmd) cmd.run(bot, message, args, con);
 });
 
-bot.on("message", async message => {
-	var fortunes = [
-    	"Yes",
-    	"No",
-    	"Maybe"]
+bot.on("message", function(message){
+	if (message.author.equals(bot.user)) return;
+	if (!message.content.startsWith(prefix)) return;
 
+	var args = message.content.substring(prefix.length).split(" ");
 
+	switch (args[0].toLowerCase()) {
 
-	case "8ball":
-            if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]); 
-            else message.channel.send("Please ask me a valid question");
-	break;
+		case "8ball":
+			if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]); 
+			else message.channel.send("Please ask me a valid question");
+			break;	
 
-
-	
-
-bot.login(botSettings.token);
+	}
+});
