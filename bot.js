@@ -8,12 +8,6 @@ function generateHex() {
 	return '#'+ Math.floor(Math.random() * 16777215).toString(16);
 }
 
-var fortunes = [
-    	"Yes",
-    	"No",
-    	"Maybe"
-];
-
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 bot.ratelimits = new Discord.Collection();
@@ -131,18 +125,25 @@ bot.on("message", async message => {
 	if(cmd) cmd.run(bot, message, args, con);
 });
 
+var fortunes = [
+	"Yes",
+	"No",
+	"Maybe"
+
 bot.on("message", function(message){
 	if (message.author.equals(bot.user)) return;
 	if (!message.content.startsWith(prefix)) return;
 
 	var args = message.content.substring(prefix.length).split(" ");
-	
-	    	case "8ball":
+
+	switch (args[0].toLowerCase()) {
+
+		case "8ball":
 			if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]); 
 			else message.channel.send("Please ask me a valid question");
-			break;
+			break;	
 
+	}
+});
 
-	
-
-bot.login(botSettings.token);
+bot.login(token);
